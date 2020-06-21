@@ -1,0 +1,54 @@
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.sql.Date;
+import java.util.List;
+
+
+public class MedAdapter {
+    SQLiteDatabase db;
+    public static String TABLE="medRecord";
+
+
+
+
+    public List<Med> getdata() {
+        Med dataModel = new Med();
+        List<Med> data = new ArrayList<>();
+        Cursor cursor = db.rawQuery("select * from " + TABLE + " ;", null);
+        StringBuffer stringBuffer = new StringBuffer();
+        while (cursor.moveToNext()) {
+            dataModel = new Med();
+            int sno = cursor.getInt(cursor.getColumnIndexOrThrow("sno"));
+            String name = cursor.getString(cursor.getColumnIndexOrThrow("med"));
+            String descrip = cursor.getString(cursor.getColumnIndexOrThrow("descrip"));
+            String cdate = cursor.getString(cursor.getColumnIndexOrThrow("cdate"));
+            String sdate = cursor.getString(cursor.getColumnIndexOrThrow("sdate"));
+            String edate = cursor.getString(cursor.getColumnIndexOrThrow("edate"));
+            String status = cursor.getString(cursor.getColumnIndexOrThrow("status"));
+
+
+            dataModel.setId(sno);
+            dataModel.setMed(name);
+            dataModel.setDesc(descrip);
+            dataModel.setStart(sdate);
+            dataModel.setEnd(edate);
+            dataModel.setStatus(status);
+            dataModel.setCreate(cdate);
+
+
+            stringBuffer.append(dataModel);
+
+            data.add(dataModel);
+        }
+
+        return data;
+    }
+
+}

@@ -1,0 +1,108 @@
+import android.database.Cursor;
+        import android.database.sqlite.SQLiteDatabase;
+        import android.support.v7.widget.RecyclerView;
+        import android.view.LayoutInflater;
+        import android.view.View;
+        import android.view.ViewGroup;
+        import android.widget.EditText;
+        import android.widget.TextView;
+
+        import java.util.ArrayList;
+        import java.util.List;
+
+
+
+public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.Myholder> {
+    List<Med> dataModelArrayList;
+
+
+    SQLiteDatabase db;
+    public static String TABLE="medRecord";
+
+
+
+
+    public List<Med> getdata() {
+        Med dataModel = new Med();
+        List<Med> data = new ArrayList<>();
+        Cursor cursor = db.rawQuery("select * from " + TABLE + " ;", null);
+        StringBuffer stringBuffer = new StringBuffer();
+        while (cursor.moveToNext()) {
+            dataModel = new Med();
+            int sno = cursor.getInt(cursor.getColumnIndexOrThrow("sno"));
+            String name = cursor.getString(cursor.getColumnIndexOrThrow("med"));
+            String descrip = cursor.getString(cursor.getColumnIndexOrThrow("descrip"));
+            String cdate = cursor.getString(cursor.getColumnIndexOrThrow("cdate"));
+            String sdate = cursor.getString(cursor.getColumnIndexOrThrow("sdate"));
+            String edate = cursor.getString(cursor.getColumnIndexOrThrow("edate"));
+            String status = cursor.getString(cursor.getColumnIndexOrThrow("status"));
+
+
+            dataModel.setId(sno);
+            dataModel.setMed(name);
+            dataModel.setDesc(descrip);
+            dataModel.setStart(sdate);
+            dataModel.setEnd(edate);
+            dataModel.setStatus(status);
+            dataModel.setCreate(cdate);
+
+
+            stringBuffer.append(dataModel);
+
+            data.add(dataModel);
+        }
+
+        return data;
+    }
+
+    public RecycleAdapter(List<Med> dataModelArrayList) {
+
+
+
+
+        this.dataModelArrayList = dataModelArrayList;
+    }
+
+    class Myholder extends RecyclerView.ViewHolder{
+        //public  TextView name,city,country;
+        public EditText sno,mednam,desc,start,end,status,create;
+
+        public Myholder(View itemView) {
+            super(itemView);
+            mednam = (EditText) itemView.findViewById(R.id.mednam);
+            desc = (EditText) itemView.findViewById(R.id.desc);
+            status = (EditText) itemView.findViewById(R.id.status);
+            start = (EditText) itemView.findViewById(R.id.start);
+            end = (EditText) itemView.findViewById(R.id.end);
+            sno = (EditText) itemView.findViewById(R.id.sno);
+            create = (EditText) itemView.findViewById(R.id.create);
+        }
+    }
+
+
+    @Override
+    public Myholder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_display_det,null);
+        return new Myholder(view);
+
+    }
+
+    @Override
+    public void onBindViewHolder(Myholder holder, int position) {
+        Med dataModel=dataModelArrayList.get(position);
+        holder.sno.setText(Med.getId());
+        holder.mednam.setText(Med.getMed());
+        holder.desc.setText(Med.getDesc());
+        holder.start.setText(Med.getStart());
+        holder.end.setText(Med.getEnd());
+        holder.status.setText(Med.getStatus());
+        holder.create.setText(Med.getCreate());
+
+    }
+
+    @Override
+    public int getItemCount() {
+        return dataModelArrayList.size();
+    }
+}
+

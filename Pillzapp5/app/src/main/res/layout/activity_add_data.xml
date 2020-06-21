@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.dilkhushmihirsen.pillzapp5.AddData">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="22dp"
+            android:text="Add Schedule"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView8"
+            android:layout_marginLeft="23dp"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="32dp"
+            android:text="Medicine Name"
+            android:textSize="12dp" />
+
+        <EditText
+            android:id="@+id/mednam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView9"
+            android:layout_marginLeft="27dp"
+            android:layout_marginStart="27dp"
+            android:layout_toEndOf="@+id/textView9"
+            android:layout_toRightOf="@+id/textView9"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView9"
+            android:layout_alignStart="@+id/textView9"
+            android:layout_below="@+id/textView9"
+            android:layout_marginTop="38dp"
+            android:text="Description"
+            android:textSize="12dp" />
+
+        <EditText
+            android:id="@+id/desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView10"
+            android:layout_alignLeft="@+id/mednam"
+            android:layout_alignStart="@+id/mednam"
+            android:ems="10"
+            android:inputType="textMultiLine" />
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView10"
+            android:layout_alignStart="@+id/textView10"
+            android:layout_below="@+id/textView10"
+            android:layout_marginTop="32dp"
+            android:text="Start Date"
+            android:textSize="12dp" />
+
+        <EditText
+            android:id="@+id/start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView19"
+            android:layout_alignLeft="@+id/desc"
+            android:layout_alignStart="@+id/desc"
+            android:ems="10"
+            android:inputType="date" />
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView19"
+            android:layout_alignStart="@+id/textView19"
+            android:layout_below="@+id/textView19"
+            android:layout_marginTop="37dp"
+            android:text="End Date"
+            android:textSize="12dp" />
+
+        <EditText
+            android:id="@+id/end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView20"
+            android:layout_alignLeft="@+id/start"
+            android:layout_alignStart="@+id/start"
+            android:ems="10"
+            android:inputType="date" />
+
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView20"
+            android:layout_alignStart="@+id/textView20"
+            android:layout_below="@+id/textView20"
+            android:layout_marginTop="31dp"
+            android:text="Time"
+            android:textSize="12dp" />
+
+        <EditText
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView21"
+            android:layout_alignLeft="@+id/end"
+            android:layout_alignStart="@+id/end"
+            android:ems="10"
+            android:inputType="time" />
+
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView21"
+            android:layout_alignStart="@+id/textView21"
+            android:layout_below="@+id/textView21"
+            android:layout_marginTop="26dp"
+            android:text="Days"
+            android:textSize="12dp" />
+
+        <CheckBox
+            android:id="@+id/sun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView22"
+            android:layout_alignStart="@+id/textView22"
+            android:layout_below="@+id/textView22"
+            android:layout_marginTop="17dp"
+            android:text="Sun"
+            android:textSize="10dp" />
+
+        <CheckBox
+            android:id="@+id/mon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/sun"
+            android:layout_alignBottom="@+id/sun"
+            android:layout_toEndOf="@+id/sun"
+            android:layout_toRightOf="@+id/sun"
+            android:text="Mon"
+            android:textSize="10dp" />
+
+        <CheckBox
+            android:id="@+id/tue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/mon"
+            android:layout_alignBottom="@+id/mon"
+            android:layout_toEndOf="@+id/mon"
+            android:layout_toRightOf="@+id/mon"
+            android:text="Tue"
+            android:textSize="10dp" />
+
+
+        <CheckBox
+            android:id="@+id/wed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/tue"
+            android:layout_alignBottom="@+id/tue"
+            android:layout_toEndOf="@+id/tue"
+            android:layout_toRightOf="@+id/tue"
+            android:text="Wed"
+            android:textSize="10dp" />
+
+        <CheckBox
+            android:id="@+id/thur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/wed"
+            android:layout_alignBottom="@+id/wed"
+            android:layout_toEndOf="@+id/wed"
+            android:layout_toRightOf="@+id/wed"
+            android:text="Thur"
+            android:textSize="10dp" />
+
+        <CheckBox
+            android:id="@+id/fri"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/thur"
+            android:layout_alignBottom="@+id/thur"
+            android:layout_toEndOf="@+id/thur"
+            android:layout_toRightOf="@+id/thur"
+            android:text="Fri"
+            android:textSize="10dp" />
+
+        <CheckBox
+            android:id="@+id/sat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/fri"
+            android:layout_alignBottom="@+id/fri"
+            android:layout_toEndOf="@+id/fri"
+            android:layout_toRightOf="@+id/fri"
+            android:text="Sat"
+            android:textSize="10dp" />
+
+
+        <TextView
+            android:id="@+id/textView26"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/sun"
+            android:layout_alignStart="@+id/sun"
+            android:layout_below="@+id/sun"
+            android:layout_marginTop="18dp"
+            android:text="When"
+            android:textSize="12dp" />
+
+        <CheckBox
+            android:id="@+id/checkBox9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView26"
+            android:layout_marginTop="12dp"
+            android:layout_toEndOf="@+id/textView26"
+            android:layout_toRightOf="@+id/textView26"
+            android:text="Before Food"
+            android:textSize="10dp" />
+
+        <CheckBox
+            android:id="@+id/checkBox10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/checkBox9"
+            android:layout_alignBottom="@+id/checkBox9"
+            android:layout_toEndOf="@+id/phocode"
+            android:layout_toRightOf="@+id/phocode"
+            android:text="After Food"
+            android:textSize="10dp" />
+
+
+        <TextView
+            android:id="@+id/textView27"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView26"
+            android:layout_alignStart="@+id/textView26"
+            android:layout_below="@+id/checkBox9"
+            android:layout_marginTop="15dp"
+            android:text="Notification"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView24"
+            android:layout_alignStart="@+id/textView24"
+            android:layout_below="@+id/textView27"
+            android:text="Before"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/textView24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/phone"
+            android:layout_toEndOf="@+id/textView30"
+            android:layout_toRightOf="@+id/textView30"
+            android:text="Snooze"
+            android:textSize="15dp" />
+
+        <Spinner
+            android:id="@+id/before"
+            android:layout_width="75dp"
+            android:layout_height="25dp"
+            android:layout_alignBottom="@+id/textView23"
+            android:layout_toEndOf="@+id/wed"
+            android:layout_toRightOf="@+id/wed"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown" />
+
+        <Spinner
+            android:id="@+id/after"
+            android:layout_width="75dp"
+            android:layout_height="25dp"
+            android:layout_alignLeft="@+id/before"
+            android:layout_alignStart="@+id/before"
+            android:layout_below="@+id/before"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown" />
+
+        <TextView
+            android:id="@+id/textView28"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/sms"
+            android:layout_alignBottom="@+id/sms"
+            android:layout_alignLeft="@+id/textView27"
+            android:layout_alignStart="@+id/textView27"
+            android:text="Mode"
+            android:textSize="12dp" />
+
+        <CheckBox
+            android:id="@+id/sms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView24"
+            android:layout_toEndOf="@+id/textView20"
+            android:layout_toRightOf="@+id/textView20"
+            android:text="SMS"
+            android:textSize="10dp" />
+
+        <CheckBox
+            android:id="@+id/phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/mednam"
+            android:layout_alignStart="@+id/mednam"
+            android:layout_below="@+id/after"
+            android:text="Phone Call"
+            android:textSize="10dp" />
+
+        <CheckBox
+            android:id="@+id/app"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/after"
+            android:layout_alignStart="@+id/after"
+            android:layout_below="@+id/after"
+            android:text="In App"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/textView30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView28"
+            android:layout_alignStart="@+id/textView28"
+            android:layout_below="@+id/phone"
+            android:layout_marginTop="17dp"
+            android:text="Phone Number"
+            android:textSize="12dp" />
+
+        <Spinner
+            android:id="@+id/phocode"
+            android:layout_width="35dp"
+            android:layout_height="25dp"
+            android:layout_alignBottom="@+id/textView30"
+            android:layout_toEndOf="@+id/tue"
+            android:layout_toRightOf="@+id/tue"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown" />
+
+        <EditText
+            android:id="@+id/phonum"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/sat"
+            android:layout_alignRight="@+id/sat"
+            android:layout_below="@+id/phone"
+            android:ems="10"
+            android:inputType="phone"
+            android:text="" />
+
+        <Button
+            android:id="@+id/create"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/phone"
+            android:layout_alignRight="@+id/phone"
+            android:layout_below="@+id/phonum"
+            android:text="Create"
+            android:textSize="18dp" />
+
+
+    </RelativeLayout>
+
+</ScrollView>
